@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <script>
+    window.themeRuntime = {
+      root: "/",
+      scriptsMap: {},
+      init: {
+        status: false
+      },
+      commentRest: {
+        status: false
+      },
+      versions: {
+        theme: "2.0.3",
+        mdui: "0.4.0",
+        fetch: "3.0.0",
+        es6promise: "4.2.5+7f2b526d",
+        lightgallery: "1.0.1",
+        smoothscroll: "15.2.0"
+      }
+      
+    };
+    console.info("%cCopyright © 2018 - " + new Date().getFullYear() +" Halyul\n"+'Theme Version: ' + themeRuntime.versions.theme +'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
+  </script>
+  <!--
+        © HEXO MDUI Theme
+        https://github.com/Halyul/hexo-theme-mdui
+        -->
+
+  <meta charset="UTF-8">
+  <title>Markdown语法总结 - Will‘s Blog</title>
+
+  <!-- Favicons -->
+  <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
+  <link rel="icon" sizes="192x192" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  <!-- Meta & Info -->
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <meta name="theme-color" content="#fff">
+
+  <meta name="author" content="Will">
+  
+  <meta name="keywords" content="blog, hexo, mdui,Markdown">
+
+  <!--iOS -->
+  <meta name="apple-mobile-web-app-title" content="Will‘s Blog">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="480">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:url" content="http://yoursite.com">
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="Markdown语法总结 - Will‘s Blog | Will‘s Blog">
+  <meta property="og:image" content="/images/favicon.png">
+  
+
+  
+    <meta property="og:article:tag" content="Markdown">
+  
+
+  
+
+  <!-- Import CSS -->
+  
+    <link rel="stylesheet" href="/css/mdui.css">
+  
+
+  
+
+</head>
+
+
+<body class="mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+
+  <style>
+    #spinner {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+          opacity: 1;
+      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+          transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+    }
+    main {
+      opacity: 0;
+      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+      transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+      display: none;
+    }
+  </style>
+  <div id="spinner">
+    <style>
+      .spinner {
+
+      -webkit-animation: rotator 1.4s linear infinite;
+              animation: rotator 1.4s linear infinite;
+      }
+
+      @-webkit-keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+      }
+      }
+
+      @keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+      }
+      }
+
+      .path {
+      stroke-dasharray: 187;
+      stroke-dashoffset: 0;
+      -webkit-transform-origin: center;
+              transform-origin: center;
+      -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+              animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+      }
+
+      @-webkit-keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+      25% {
+        stroke: #DE3E35;
+      }
+      50% {
+        stroke: #F7C223;
+      }
+      75% {
+        stroke: #1B9A59;
+      }
+      100% {
+        stroke: #4285F4;
+      }
+      }
+
+      @keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+      25% {
+        stroke: #DE3E35;
+      }
+      50% {
+        stroke: #F7C223;
+      }
+      75% {
+        stroke: #1B9A59;
+      }
+      100% {
+        stroke: #4285F4;
+      }
+      }
+
+      @-webkit-keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+      }
+      }
+
+      @keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+      }
+      }
+    </style>
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+    </svg>
+  </div>
+
+  <main>
+    <div class="mdui-appbar mdui-appbar-fixed mdui-color-white mdui-shadow-0 theme-appbar">
+  <div class="mdui-toolbar theme-toolbar-top">
+    
+      <a href="/" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--arrow">
+        <i class="mdui-icon">
+          <span></span>
+        </i>
+      </a>
+    
+  </div>
+  <div class="mdui-toolbar theme-toolbar-bottom">
+    <span class="theme-toolbar-bottom__title">Will‘s Blog</span>
+    
+      <a href="/search.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
+        <i class="mdui-icon material-icons">&#xe8b6;</i>
+      </a>
+    
+  </div>
+  <div class="mdui-progress theme-appbar__progress" id="progressBar">
+    <div class="mdui-progress-indeterminate"></div>
+  </div>
+</div>
+
+    <div class="mdui-drawer mdui-drawer-full-height theme-drawer" id="drawer">
+  <!-- header -->
+  <div class="theme-drawer__header">
+  <div class="theme-drawer__header__layer-1">
+    <div class="mdui-toolbar theme-toolbar-top">
+      
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--drawer theme-appbar__burger--arrow" id="drawer-back">
+          <i class="mdui-icon">
+            <span></span>
+          </i>
+        </a>
+      
+    </div>
+    <div class="mdui-toolbar theme-toolbar-bottom">
+      <span class="theme-toolbar-bottom__title">Will‘s Blog</span>
+    </div>
+  </div>
+  <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
+    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png">
+    <div class="theme-drawer__header__layer-2__user__info">
+      <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
+        Will
+      </div>
+      <div class="theme-drawer__header__layer-2__user__info__slogan mdui-text-color-white-secondary">
+        I&#39;m your slogan!
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="theme-drawer__warpper">
+    <!-- content -->
+    <div class="theme-drawer__warpper__content">
+  <ul class="mdui-list">
+    <a href="/" class="mdui-list-item mdui-ripple mdui-ripple-white">
+      <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
+      <div class="mdui-list-item-content">首页</div>
+    </a>
+    <a href="/archives/" class="mdui-list-item mdui-ripple mdui-ripple-white">
+      <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
+      <div class="mdui-list-item-content">归档</div>
+    </a>
+    <ul class="mdui-list mdui-collapse" mdui-collapse="{accordion: true}">
+      
+        <div class="mdui-collapse-item ">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
+            <div class="mdui-list-item-content">分类</div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+          </div>
+          <div class="mdui-collapse-item-body mdui-list">
+            
+              <a href="/categories/工具类知识/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                工具类知识
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>2</span>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+        <div class="mdui-collapse-item ">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
+            <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
+            <div class="mdui-list-item-content">标签</div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+          </div>
+          <div class="mdui-collapse-item-body mdui-list">
+            
+              <a href="/tags/Markdown/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                Markdown
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
+              </a>
+            
+              <a href="/tags/Hexo/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                Hexo
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
+              </a>
+            
+          </div>
+        </div>
+      
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
+          <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
+          <div class="mdui-list-item-content">年份</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          
+          
+            <a href="/archives/2019/" class="mdui-list-item mdui-ripple">
+              2019
+            </a>
+          
+        </div>
+      </div>
+    </ul>
+  </ul>
+  
+    <div class="mdui-divider"></div>
+    <ul class="mdui-list" mdui-collapse="{accordion: true}">
+      
+        
+          
+            <a href="/friends" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
+          
+              
+              
+                <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ba;</i>
+              
+              
+              <div class="mdui-list-item-content">Test1</div>
+            </a>
+        
+      
+        
+          
+            <a href="/apply-for-link" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
+          
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-child mdui-text-center"></i>
+              
+              
+              
+              <div class="mdui-list-item-content">Test2</div>
+            </a>
+        
+      
+        
+          
+            <a href="/galleries" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
+          
+              
+              
+                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+              
+              
+              <div class="mdui-list-item-content">Test3</div>
+            </a>
+        
+      
+        
+          <div class="mdui-collapse-item">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
+              
+              
+                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+              
+              
+              <div class="mdui-list-item-content">Test4</div>
+              <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+            </div>
+            <div class="mdui-collapse-item-body mdui-list">
+              
+                
+                  <a href="/myfriends" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
+                
+                    TEST1
+                  </a>
+              
+                
+                  <a href="/timeline" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
+                
+                    TEST2
+                  </a>
+              
+            </div>
+          </div>
+        
+      
+    </ul>
+  
+</div>
+
+    <div class="theme-spacer"></div>
+    <!-- footer -->
+    <div class="theme-drawer__warpper__footer">
+  <div class="mdui-typo mdui-typo-caption-opacity">
+    Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme - <a href="//github.com/Halyul/hexo-theme-mdui" target="_blank">Halyul/MDUI</a>
+    <br>
+    <span>
+      Copyright ©
+      <span year></span>
+      Will
+    </span>
+    
+    
+      <br>
+      <span>
+        最后更新于: 6月 01, 2019
+      </span>
+    
+    
+  </div>
+</div>
+<script type="text/javascript">
+  var copyrightNow = new Date().getFullYear();
+  var textContent = document.querySelector('span[year]')
+  
+    textContent.textContent = copyrightNow
+  
+</script>
+
+  </div>
+</div>
+
+    <div id="top"></div>
+
+    <script src="/js/lightgallery.min.js"></script>
+
+    <div id="barba-wrapper">
+      <div class="barba-container"  data-namespace="post">
+        
+
+
+
+  <link rel="stylesheet" href="/css/prism/darcula.min.css">
+
+
+  <link rel="stylesheet" href="/css/prism/line-number.min.css">
+
+
+<div class="theme-post">
+  <div class="theme-post__background mdui-color-theme"></div>
+  <div class="theme-post__header mdui-color-theme">
+    <div class="theme-post__header__title mdui-text-truncate">
+      Markdown语法总结
+    </div>
+    <div class="theme-spacer"></div>
+    <div class="theme-post__header__actions mdui-valign">
+      <div>
+        <span>编写时间：</span>
+        <span style="float: right">5月 31, 2019</span>
+        
+      </div>
+      
+  <div class="theme-post__qrcode">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
+      <i class="mdui-icon material-icons">&#xe337;</i>
+    </button>
+    <ul class="mdui-menu" id="qrcode-menu">
+      <li class="mdui-list-item" style="cursor: auto">
+        文章二维码
+      </li>
+        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYElEQVR42u3aUW7jMAwE0Nz/0tsDLKLOULbiBs9fRYs4eiogEUO+/n3188LDw8PDw8PDw3sY7xU/7z7V/n72LcWn8PDw8I7wfjlq4y9+99f/37Ne4tba8PDw8A7y8mWtL4NkWes1zNaGh4eH92RechnsbBAeHh7e9/GSRSfvT0h4eHh4T+blJe96WcmbW+qhrAUPDw8v5uVNpvM/H+3v4eHh4QW8eqQpjnHzgYD1lXN0pgwPDw8v4OUH8bXB6/7FgIeHh/dZ3lUDAeswty3W22EvPDw8vDO8tvmUhLY7ja788ni7lXh4eHgHebPhgFnzbIeEh4eH9xzebCw1L6bzLZvFEHh4eHhneMUY6Po4LsdVZ4V7dMHg4eHh3cxLyuUEto4bZs2tPP7Aw8PDO89LwLModqdwbzcaDw8P7yRvJ3Ro21074W/0b8DDw8P7EG8WB0QHd1k010MMeHh4eDfzZi+dhQvthl4wdIWHh4d3A29WwubB68410BbueHh4eJ/i7YwLXHCsl5u1NTqAh4eHN+Ilbae8BG+bZLMopIhx8fDw8G7mtb9pj/g8/J0FuHh4eHjnefkQwE6JPLsqilEGPDw8vA/xZhdDsqx8bKvdaDw8PLwzvPaZbUceW7TxbtQAw8PDw7uUNzuU2wC3jYO3Wmh4eHh4R3jtZdAW1rOgIQ9N8PDw8D7Fy4dQk1bZzhhrckXh4eHh/XXetewZGA8PD+/5vHUJ3kYJbeuriHHx8PDwbuPlkWsyFjD71OwywMPDwzvPm0UACamNaNstwMPDwzvP+74HDw8PDw8PDw/vAc8P0EEWESEi9aUAAAAASUVORK5CYII=" style="cursor: auto">
+    </ul>
+  </div>
+
+
+      
+  <div class="theme-post__share">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
+      <i class="mdui-icon material-icons">&#xe80d;</i>
+    </button>
+
+    <ul class="mdui-menu" id="post-share-menu">
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com//year/05/31/Markdown语法总结/index.html" target="_blank" class="mdui-ripple">
+                分享到Facebook
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com//year/05/31/Markdown语法总结/index.html" target="_blank" class="mdui-ripple">
+                分享到Google+
+            </a>
+        </li>
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com//year/05/31/Markdown语法总结/index.html&title=Markdown语法总结" target="_blank" class="mdui-ripple">
+                分享到Linkedin
+            </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Markdown语法总结&url=http://yoursite.com//year/05/31/Markdown语法总结/index.html&via=Will" target="_blank" class="mdui-ripple">
+                分享到Twitter
+            </a>
+        </li>
+      
+
+      
+
+    </ul>
+  </div>
+
+
+    </div>
+  </div>
+  <div class="theme-post__warpper
+    
+  ">
+    <div class="theme-post__warpper__container">
+      <article class="mdui-card theme-post__card mdui-hoverable">
+        <section class="theme-post__card__warning">
+          这篇文章最后修改于
+          <span id="content-warning"></span>
+          天之前。
+          本页内容可能已经过时！
+        </section>
+        
+        
+          <section class="mdui-card-media">
+            <img src="/images/random/39.png">
+          </section>
+        
+        <section class="mdui-typo theme-post__card__content">
+          <p>我认为Markdown语法算是html语言的一种语法糖，所以是兼容html语言的。</p>
+<h2 id="一-标题"><a href="#一-标题" class="headerlink" title="一.标题"></a>一.标题</h2><h5 id="1-两个-或者两个-对应1、2阶标题"><a href="#1-两个-或者两个-对应1、2阶标题" class="headerlink" title="1. 两个= 或者两个- 对应1、2阶标题"></a>1. 两个= 或者两个- 对应1、2阶标题</h5><pre><code>This is an H1(=最高阶标题)
+==
+This is an H2(-第二阶标题)
+--</code></pre><p>对应效果：</p>
+<blockquote>
+<h1 id="This-is-an-H1-最高阶标题"><a href="#This-is-an-H1-最高阶标题" class="headerlink" title="This is an H1(=最高阶标题)"></a>This is an H1(=最高阶标题)</h1><h2 id="This-is-an-H2-第二阶标题"><a href="#This-is-an-H2-第二阶标题" class="headerlink" title="This is an H2(-第二阶标题)"></a>This is an H2(-第二阶标题)</h2></blockquote>
+<h5 id="2-在行首插入-1-到-6-个-，对应到标题-1-到-6-阶"><a href="#2-在行首插入-1-到-6-个-，对应到标题-1-到-6-阶" class="headerlink" title="2.在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶"></a>2.在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶</h5><pre><code># 这是 H1
+## 这是 H2
+###### 这是 H6</code></pre><p>对应效果</p>
+<blockquote>
+<h1 id="这是-H1"><a href="#这是-H1" class="headerlink" title="这是 H1"></a>这是 H1</h1><h2 id="这是-H2"><a href="#这是-H2" class="headerlink" title="这是 H2"></a>这是 H2</h2><h6 id="这是-H6"><a href="#这是-H6" class="headerlink" title="这是 H6"></a>这是 H6</h6></blockquote>
+<hr>
+<br>
+
+<h2 id="二-区块引用-Blockquotes"><a href="#二-区块引用-Blockquotes" class="headerlink" title="二.区块引用 Blockquotes"></a>二.区块引用 Blockquotes</h2><h5 id="1-每行话前都加-gt"><a href="#1-每行话前都加-gt" class="headerlink" title="1.每行话前都加&gt;"></a>1.每行话前都加&gt;</h5><p>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
+<p>对应的效果如下：</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</p>
+</blockquote>
+<h5 id="2-整个段落的第一句话前加-gt"><a href="#2-整个段落的第一句话前加-gt" class="headerlink" title="2.整个段落的第一句话前加&gt;"></a>2.整个段落的第一句话前加&gt;</h5><p>&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus aqipiscing.</p>
+<p>对应的效果如下：</p>
+<blockquote>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus aqipiscing.</p>
+</blockquote>
+<h5 id="3-区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的-注意中间加个-gt-分割。"><a href="#3-区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的-注意中间加个-gt-分割。" class="headerlink" title="3.区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的,注意中间加个&gt;分割。"></a>3.区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的,注意中间加个&gt;分割。</h5><pre><code>&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested block quote.
+&gt;&gt;&gt;递减时中间加个&gt;，如果不加的话，会一直保持最后的缩进
+&gt; 
+&gt;&gt;This is nested block quote.
+&gt; Back to the first level.</code></pre><blockquote>
+<p>This is the first level of quoting.</p>
+<blockquote>
+<p>This is nested block quote.</p>
+<blockquote>
+<p>递减时中间加个”&gt;”，如果不加的话，会一直保持最后的缩进</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>This is nested block quote.<br>Back to the first level.</p>
+</blockquote>
+</blockquote>
+<h5 id="4-引用的区块内也可以使用其他的-Markdown-语法，包括标题、列表、代码区块等："><a href="#4-引用的区块内也可以使用其他的-Markdown-语法，包括标题、列表、代码区块等：" class="headerlink" title="4.引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等："></a>4.引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</h5><pre><code>&gt; ### 这是一个标题。
+&gt; 1.  这是第一行列表项。
+&gt; 2.  这是第二行列表项。
+
+&gt; 给出一些例子代码：
+&gt; 
+&gt;    return shell_exec(&quot;echo $input | $markdown_script&quot;);  (最前边要有4个空格)</code></pre><p>对应效果：</p>
+<blockquote>
+<h2 id="这是一个标题。"><a href="#这是一个标题。" class="headerlink" title="这是一个标题。"></a>这是一个标题。</h2><ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>给出一些例子代码：</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre></blockquote>
+<hr>
+<br>
+## 三.列表
+
+<p>Markdown 支持有序列表和无序列表。</p>
+<h5 id="1-无序列表使用星号、加号或是减号作为列表标记："><a href="#1-无序列表使用星号、加号或是减号作为列表标记：" class="headerlink" title="1.无序列表使用星号、加号或是减号作为列表标记："></a>1.无序列表使用星号、加号或是减号作为列表标记：</h5><pre><code>* Red    
+- Green
++ Blue</code></pre><blockquote>
+<ul>
+<li>Red</li>
+</ul>
+<ul>
+<li>Green</li>
+</ul>
+<ul>
+<li>Blue</li>
+</ul>
+</blockquote>
+<h5 id="2-有序列表则使用数字接着一个英文句点"><a href="#2-有序列表则使用数字接着一个英文句点" class="headerlink" title="2.有序列表则使用数字接着一个英文句点:"></a>2.有序列表则使用数字接着一个英文句点:</h5><pre><code>1. Bird   
+2. McHale
+3. Parish</code></pre><blockquote>
+<ol>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
+</ol>
+</blockquote>
+<p>你可以完全不用在意数字的正确性，建议第一个项目最好还是从 1. 开始。</p>
+<hr>
+<br>
+
+<h2 id="四-代码区块"><a href="#四-代码区块" class="headerlink" title="四.代码区块"></a>四.代码区块</h2><h5 id="1-使用-lt-pre-gt-和-lt-code-gt-标签来把代码区块包起来"><a href="#1-使用-lt-pre-gt-和-lt-code-gt-标签来把代码区块包起来" class="headerlink" title="1.使用 &lt;pre&gt; 和 &lt;code&gt; 标签来把代码区块包起来"></a>1.使用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来</h5><pre><code>&lt;pre&gt; 代码块 &lt;/pre&gt;
+&lt;code&gt;单行代码&lt;/code&gt;  </code></pre><p>效果如下：</p>
+<pre> 代码块格式 </pre>
+<p><code>单行代码格式</code></p>
+<h5 id="2-使用反引号“-”包单行代码"><a href="#2-使用反引号“-”包单行代码" class="headerlink" title="2.使用反引号“`”包单行代码"></a>2.使用反引号“`”包单行代码</h5><pre><code>`单行代码格式`  </code></pre><p><code>单行代码格式</code> </p>
+<h5 id="3-代码区使用反引号-“-“-的方式就是用-“-“-将-“-“-包起来。"><a href="#3-代码区使用反引号-“-“-的方式就是用-“-“-将-“-“-包起来。" class="headerlink" title="3.代码区使用反引号 “`“ 的方式就是用 “``“ 将 “`“ 包起来。"></a>3.代码区使用反引号 “`“ 的方式就是用 “``“ 将 “`“ 包起来。</h5><pre><code>A single backtick in a code span: `` ` ``
+A backtick-delimited string in a code span: `` `foo` ``</code></pre><p>转换成的效果如下：</p>
+<blockquote>
+<p>A single backtick in a code span: <code>`</code><br>A backtick-delimited string in a code span: <code>`foo`</code></p>
+</blockquote>
+<h5 id="4-使用三个反引号”-“包代码块，且前后的3个反引号各占一行。"><a href="#4-使用三个反引号”-“包代码块，且前后的3个反引号各占一行。" class="headerlink" title="4.使用三个反引号”```“包代码块，且前后的3个反引号各占一行。"></a>4.使用三个反引号”```“包代码块，且前后的3个反引号各占一行。</h5><pre><code>```
+代码块
+```</code></pre><p>效果如下</p>
+<pre><code>代码块</code></pre><h5 id="5-也可以只要简单地缩进-4-个空格或是-1-个制表符就可以。"><a href="#5-也可以只要简单地缩进-4-个空格或是-1-个制表符就可以。" class="headerlink" title="5.也可以只要简单地缩进 4 个空格或是 1 个制表符就可以。"></a>5.也可以只要简单地缩进 4 个空格或是 1 个制表符就可以。</h5><pre><code>    这是一个代码区块。</code></pre><p>Markdown 转换成如下效果：</p>
+<pre><code>这是一个代码区块。</code></pre><p>且每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除。一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
+<h5 id="6-代码块内特殊字符不会起作用。"><a href="#6-代码块内特殊字符不会起作用。" class="headerlink" title="6.代码块内特殊字符不会起作用。"></a>6.代码块内特殊字符不会起作用。</h5><p>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</p>
+<hr>
+<br>
+
+<h2 id="五-分割线"><a href="#五-分割线" class="headerlink" title="五.分割线"></a>五.分割线</h2><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：<br>* * *</p>
+<p>***</p>
+<p>*****</p>
+<p>- - -</p>
+<p>-————–</p>
+<blockquote>
+<hr>
+</blockquote>
+<hr>
+<br>
+
+<h2 id="六-文字样式"><a href="#六-文字样式" class="headerlink" title="六.文字样式"></a>六.文字样式</h2><h5 id="1-强调，Markdown-使用星号（-）和底线（-）作为标记强调字词的符号，效果如下："><a href="#1-强调，Markdown-使用星号（-）和底线（-）作为标记强调字词的符号，效果如下：" class="headerlink" title="1.强调，Markdown 使用星号（*）和底线（_）作为标记强调字词的符号，效果如下："></a>1.强调，Markdown 使用星号（*）和底线（_）作为标记强调字词的符号，效果如下：</h5><pre><code>*single asterisks斜体*    
+_single underscores斜体(有的是下划线)_
+**double asterisks粗体**
+__double underscores粗体__</code></pre><p>会转成：</p>
+<blockquote>
+<p><em>single asterisks斜体</em><br><em>single underscores斜体(有的是下划线)</em><br><strong>double asterisks粗体</strong><br><strong>double underscores粗体</strong></p>
+</blockquote>
+<p>你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。</p>
+<h5 id="2-强调也可以直接插在文字中间："><a href="#2-强调也可以直接插在文字中间：" class="headerlink" title="2.强调也可以直接插在文字中间："></a>2.强调也可以直接插在文字中间：</h5><p>un**frigging**believable</p>
+<blockquote>
+<p>un<strong>frigging</strong>believable </p>
+</blockquote>
+<h5 id="3-文本两端增加-可以作为删除线："><a href="#3-文本两端增加-可以作为删除线：" class="headerlink" title="3.文本两端增加~~可以作为删除线："></a>3.文本两端增加~~可以作为删除线：</h5><pre><code>~~DeleteLine~~</code></pre><p>转换的效果如下:<br><del>DeleteLine</del></p>
+<h5 id="4-文本两端增加-可以作为高亮-Hexo不支持-："><a href="#4-文本两端增加-可以作为高亮-Hexo不支持-：" class="headerlink" title="4.文本两端增加==可以作为高亮(Hexo不支持)："></a>4.文本两端增加==可以作为高亮(Hexo不支持)：</h5><pre><code>==高亮==</code></pre><p>==高亮==</p>
+<h5 id="5-上下标文字："><a href="#5-上下标文字：" class="headerlink" title="5.上下标文字："></a>5.上下标文字：</h5><pre><code>这是^上标文字 (Hexo不支持)
+这是&lt;sup&gt;上标文字&lt;/sup&gt;
+这是&lt;sub&gt;下标文字&lt;/sub&gt;</code></pre><blockquote>
+<p>这是^上标文字<br>这是<sup>上标文字</sup><br>这是<sub>下标文字</sub></p>
+</blockquote>
+<hr>
+<br>
+
+<h2 id="七-反斜杠"><a href="#七-反斜杠" class="headerlink" title="七.反斜杠"></a>七.反斜杠</h2><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，比如：<br>\* literal asterisks \*<br>转换成的效果如下(*只是展示没有转成斜体的语法)：</p>
+<blockquote>
+<p>*literal asterisks*</p>
+</blockquote>
+<p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<pre><code>\ 反斜线;  ` 反引号;  * 星号;  _ 底线;  {} 花括号;  [] 方括号;  () 括弧;
+# 井字号;  + 加号;  - 减号;  . 英文句点;  ! 惊叹号;</code></pre><hr>
+<h2 id="八-表格"><a href="#八-表格" class="headerlink" title="八.表格"></a>八.表格</h2><p>表格的样式最重要的就是第二行的占位符。</p>
+<pre><code>文本类型 | 文本类型| 文本类型
+:-----|:------:|-----:
+居左文本 | 居中文本 | 居右文本</code></pre><blockquote>
+<div class="mdui-table-fluid theme-post__card__table--flat"><table class="mdui-table mdui-table-hoverable ">
+<thead>
+<tr>
+<th align="left">文本类型</th>
+<th align="center">文本类型</th>
+<th align="right">文本类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">居左文本</td>
+<td align="center">居中文本</td>
+<td align="right">居右文本</td>
+</tr>
+</tbody></table></div>
+</blockquote>
+<hr>
+<br>
+
+<h2 id="九-超链接"><a href="#九-超链接" class="headerlink" title="九.超链接"></a>九.超链接</h2><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
+<h5 id="1-行内式的链接。"><a href="#1-行内式的链接。" class="headerlink" title="1.行内式的链接。"></a>1.行内式的链接。</h5><pre><code>这是 [百度](http://baidu.com/ &quot;百度&quot;) 的链接，这也是[百度](http://baidu.com/) 链接.</code></pre><p>转换成的效果如下：</p>
+<blockquote>
+<p>这是 <a href="http://baidu.com/" title="百度" target="_blank" rel="noopener">百度</a> 的链接，这也是<a href="http://baidu.com/" target="_blank" rel="noopener">百度</a> 链接.</p>
+</blockquote>
+<h5 id="2-可使用相对路径链接到相同主机的资源。"><a href="#2-可使用相对路径链接到相同主机的资源。" class="headerlink" title="2.可使用相对路径链接到相同主机的资源。"></a>2.可使用相对路径链接到相同主机的资源。</h5><p>See my [本地资源名](/相对路径/) page for details.</p>
+<p>转化成的效果如下: </p>
+<blockquote>
+<p>See my <a href="/相对路径/">本地资源名</a> page for details.</p>
+</blockquote>
+<h5 id="3-参考式链接-需要链接内容配合。"><a href="#3-参考式链接-需要链接内容配合。" class="headerlink" title="3.参考式链接,需要链接内容配合。"></a>3.参考式链接,需要链接内容配合。</h5><pre><code>This is [百度][百度ID] reference-style link. 
+This is [百度] [百度IDI] reference-style link.( 两个方括号之间加个空格键也可以)
+
+（链接内容，通过ID链接，链接内容会隐藏）
+[百度ID]: http://baidu.com/  &quot;百度Title&quot;
+[百度IDI]: http://baidu.com/  </code></pre><p>转换成的效果如下：</p>
+<blockquote>
+<p>This is <a href="http://baidu.com/" title="百度Title" target="_blank" rel="noopener">百度</a> reference-style link.<br>This is [百度] <a href="http://baidu.com/" target="_blank" rel="noopener">百度IDI</a> reference-style link.( 两个方括号之间加个空格键也可以)</p>
+</blockquote>
+<hr>
+<br>
+
+<h2 id="十-图片"><a href="#十-图片" class="headerlink" title="十.图片"></a>十.图片</h2><p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： 行内式和参考式。</p>
+<h5 id="1-行内式的图片语法："><a href="#1-行内式的图片语法：" class="headerlink" title="1.行内式的图片语法："></a>1.行内式的图片语法：</h5><pre><code>![图片下方文字](图片地址 &quot;图片title&quot;) 
+
+![bloakChain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg)</code></pre><blockquote>
+<p><img src="%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80" alt="图片下方文字" title="图片title"><br>![bloakChain](<a href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/" target="_blank" rel="noopener">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</a><br>u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg)</p>
+</blockquote>
+<p>图片title可有可无。有些语法图片下方文字不展示。</p>
+<h5 id="2-参考式的图片语法："><a href="#2-参考式的图片语法：" class="headerlink" title="2.参考式的图片语法："></a>2.参考式的图片语法：</h5><pre><code>![bloakChain][imageId]
+
+[imageId]: https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg &quot;区块链&quot;</code></pre><blockquote>
+<p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=702257389,1274025419&fm=27&gp=0.jpg" alt="bloakChain" title="区块链"></p>
+</blockquote>
+<p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签。</p>
+<hr>
+<br>
+
+<h2 id="十一-脚注和注释（Hexo-不支持）"><a href="#十一-脚注和注释（Hexo-不支持）" class="headerlink" title="十一.脚注和注释（Hexo 不支持）"></a>十一.脚注和注释（Hexo 不支持）</h2><h5 id="1-使用-定义脚注，示例如下："><a href="#1-使用-定义脚注，示例如下：" class="headerlink" title="1.使用[^]定义脚注，示例如下："></a>1.使用<code>[^]</code>定义脚注，示例如下：</h5><pre><code>脚注[^1]为什么在上边？
+[^1]: 因为这个注释会在文章的最后出现</code></pre><p>脚注[^1]为什么在上边？<br>[^1]: 因为这个注释会在文章的最后出现</p>
+<h5 id="2-注释只在文本编辑时出现："><a href="#2-注释只在文本编辑时出现：" class="headerlink" title="2.注释只在文本编辑时出现："></a>2.注释只在文本编辑时出现：</h5><pre><code>&lt;!--注释--&gt;</code></pre><p>右侧使用了注释，但你看不见：<!--注释--></p>
+<br>
+
+<h2 id="十二-Markdown中常用的Html标签"><a href="#十二-Markdown中常用的Html标签" class="headerlink" title="十二.Markdown中常用的Html标签"></a>十二.Markdown中常用的Html标签</h2><h5 id="1-字体"><a href="#1-字体" class="headerlink" title="1.字体"></a>1.字体</h5><pre><code>&lt;font face=&quot;微软雅黑&quot; color=&quot;red&quot; size=&quot;6&quot;&gt;字体及字体颜色和大小&lt;/font&gt;
+&lt;font color=&quot;#0000ff&quot;&gt;字体颜色&lt;/font&gt;</code></pre><p>效果如下：<br><font face="微软雅黑" color="red" size="6">字体及字体颜色和大小</font><br><font color="#0000ff">字体颜色</font></p>
+<h5 id="2-换行符"><a href="#2-换行符" class="headerlink" title="2.换行符"></a>2.换行符</h5><pre><code>第一行
+第二行 &lt;br/&gt;
+使用换行符号\&lt;br&gt;后</code></pre><p>第一行<br>第二行 <br><br>使用换行符号<code>&lt;br&gt;</code>后</p>
+<h5 id="3-文本对齐方式"><a href="#3-文本对齐方式" class="headerlink" title="3.文本对齐方式"></a>3.文本对齐方式</h5><pre><code>&lt;p align=&quot;left&quot;&gt;居左文本&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;居中文本&lt;/p&gt;
+&lt;p align=&quot;right&quot;&gt;居右文本&lt;/p&gt;</code></pre><p align="left">居左文本</p>
+<p align="center">居中文本</p>
+<p align="right">居右文本</p>
+##### 4.下划线
+```
+<u>下划线文本</u>
+```
+<u>下划线文本</u>
+<br>
+___
+
+<h2 id="十三-任务列表"><a href="#十三-任务列表" class="headerlink" title="十三.任务列表"></a>十三.任务列表</h2><p>任务列表的内容支持其他格式的markdown语法</p>
+<pre><code>- [ ] 未选中的选项 [百度链接](http://baidu.com)，__强调__
+- [x] 选中的选项 </code></pre><p>效果如下：</p>
+<ul>
+<li><input disabled type="checkbox"> 未选中的选项 <a href="http://baidu.com" target="_blank" rel="noopener">百度链接</a>，<strong>强调</strong></li>
+<li><input checked disabled type="checkbox"> 选中的选项 </li>
+</ul>
+<h2 id="十四-自动链接和目录"><a href="#十四-自动链接和目录" class="headerlink" title="十四.自动链接和目录"></a>十四.自动链接和目录</h2><h5 id="1-自动链接"><a href="#1-自动链接" class="headerlink" title="1.自动链接"></a>1.自动链接</h5><p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， 就会自动把它转成链接。例如：</p>
+<pre><code>网址： &lt;http://example.com/&gt;
+邮箱:  &lt;address@example.com&gt;</code></pre><p>Markdown 会转为：<br>网址：<a href="http://example.com/" target="_blank" rel="noopener">http://example.com/</a><br>邮箱:   <a href="mailto:&#97;&#x64;&#100;&#x72;&#101;&#x73;&#115;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;" target="_blank" rel="noopener">&#97;&#x64;&#100;&#x72;&#101;&#x73;&#115;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
+<h5 id="2-目录"><a href="#2-目录" class="headerlink" title="2.目录"></a>2.目录</h5><pre><code>[TOC]</code></pre><p>使用TOC会自动生成目录(简书/Hexo暂不支持)</p>
+<hr>
+<h2 id="十五-流程图-Hexo-不支持"><a href="#十五-流程图-Hexo-不支持" class="headerlink" title="十五.流程图(Hexo 不支持)"></a>十五.流程图(Hexo 不支持)</h2><pre><code>```flow
+st=&gt;start: Start:&gt;https://www.jpjbp.com/
+io=&gt;inputoutput: verification
+op=&gt;operation: Your Operation
+cond=&gt;condition: Yes or No?
+sub=&gt;subroutine: Your Subroutine
+e=&gt;end
+st-&gt;io-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;sub-&gt;io
+&amp;```</code></pre><p>更多的流程图语言请参考：<a href="http://flowchart.js.org" target="_blank" rel="noopener">Markdown流程图语言</a></p>
+<p>转换的效果如下：</p>
+<pre class="line-numbers language-flow" mdui-tooltip="{content: 'flow'}"><code class="language-flow">st=>start: Start:>https://www.jpjbp.com/
+io=>inputoutput: verification
+op=>operation: Your Operation
+cond=>condition: Yes or No?
+sub=>subroutine: Your Subroutine
+e=>end
+st->io->op->cond
+cond(yes)->e
+cond(no)->sub->io
+&```
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+        </section>
+
+        
+          <section class="theme-post__card__license mdui-typo">
+            <span>
+              本文许可协议：
+              
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a>
+              
+            </span>
+            <br>
+            <span>本文永久链接：<a href="http://yoursite.com/year/05/31/Markdown语法总结/">http://yoursite.com/year/05/31/Markdown语法总结/</a></span>
+            
+              <br>
+              <span>本文Markdown：<a href="http://yoursite.com/year/05/31/Markdown语法总结/Markdown语法总结.md">http://yoursite.com/year/05/31/Markdown语法总结/Markdown语法总结.md</a></span>
+            
+          </section>
+        
+
+        
+          <section class="mdui-card-actions theme-post__card__actions">
+            
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '打赏', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
+                <i class="mdui-icon fa fa-beer"></i>
+              </button>
+            
+            <div class="theme-spacer"></div>
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/categories/工具类知识/">
+                    <span>工具类知识</span>
+                  </a>
+                
+              </div>
+            
+            
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="mdui-typo">
+                
+                  <a href="/tags/Markdown/">
+                    <span>Markdown</span>
+                  </a>
+                
+              </div>
+            
+          </section>
+        
+
+        
+          
+            <script type="text/javascript">
+              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+                return
+              }
+            </script>
+          
+        
+      </article>
+      
+        <div class="mdui-color-theme theme-post__toc">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E00;-&#x6807;&#x9898;" data-href="#&#x4E00;-&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text">1. &#x4E00;.&#x6807;&#x9898;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x4E24;&#x4E2A;-&#x6216;&#x8005;&#x4E24;&#x4E2A;-&#x5BF9;&#x5E94;1&#x3001;2&#x9636;&#x6807;&#x9898;" data-href="#1-&#x4E24;&#x4E2A;-&#x6216;&#x8005;&#x4E24;&#x4E2A;-&#x5BF9;&#x5E94;1&#x3001;2&#x9636;&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text">1.0.0.1. 1. &#x4E24;&#x4E2A;= &#x6216;&#x8005;&#x4E24;&#x4E2A;- &#x5BF9;&#x5E94;1&#x3001;2&#x9636;&#x6807;&#x9898;</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#This-is-an-H1-&#x6700;&#x9AD8;&#x9636;&#x6807;&#x9898;" data-href="#This-is-an-H1-&#x6700;&#x9AD8;&#x9636;&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text"> This is an H1(=&#x6700;&#x9AD8;&#x9636;&#x6807;&#x9898;)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#This-is-an-H2-&#x7B2C;&#x4E8C;&#x9636;&#x6807;&#x9898;" data-href="#This-is-an-H2-&#x7B2C;&#x4E8C;&#x9636;&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text">1. This is an H2(-&#x7B2C;&#x4E8C;&#x9636;&#x6807;&#x9898;)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x5728;&#x884C;&#x9996;&#x63D2;&#x5165;-1-&#x5230;-6-&#x4E2A;-&#xFF0C;&#x5BF9;&#x5E94;&#x5230;&#x6807;&#x9898;-1-&#x5230;-6-&#x9636;" data-href="#2-&#x5728;&#x884C;&#x9996;&#x63D2;&#x5165;-1-&#x5230;-6-&#x4E2A;-&#xFF0C;&#x5BF9;&#x5E94;&#x5230;&#x6807;&#x9898;-1-&#x5230;-6-&#x9636;"><span class="toc-number"></span> <span class="toc-text">1.0.0.1. 2.&#x5728;&#x884C;&#x9996;&#x63D2;&#x5165; 1 &#x5230; 6 &#x4E2A; # &#xFF0C;&#x5BF9;&#x5E94;&#x5230;&#x6807;&#x9898; 1 &#x5230; 6 &#x9636;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;-H1" data-href="#&#x8FD9;&#x662F;-H1"><span class="toc-number"></span> <span class="toc-text"> &#x8FD9;&#x662F; H1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;-H2" data-href="#&#x8FD9;&#x662F;-H2"><span class="toc-number"></span> <span class="toc-text">1. &#x8FD9;&#x662F; H2</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;-H6" data-href="#&#x8FD9;&#x662F;-H6"><span class="toc-number"></span> <span class="toc-text">1.0.0.0.1. &#x8FD9;&#x662F; H6</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E8C;-&#x533A;&#x5757;&#x5F15;&#x7528;-Blockquotes" data-href="#&#x4E8C;-&#x533A;&#x5757;&#x5F15;&#x7528;-Blockquotes"><span class="toc-number"></span> <span class="toc-text">2. &#x4E8C;.&#x533A;&#x5757;&#x5F15;&#x7528; Blockquotes</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x6BCF;&#x884C;&#x8BDD;&#x524D;&#x90FD;&#x52A0;-gt" data-href="#1-&#x6BCF;&#x884C;&#x8BDD;&#x524D;&#x90FD;&#x52A0;-gt"><span class="toc-number"></span> <span class="toc-text">2.0.0.1. 1.&#x6BCF;&#x884C;&#x8BDD;&#x524D;&#x90FD;&#x52A0;&gt;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6574;&#x4E2A;&#x6BB5;&#x843D;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x8BDD;&#x524D;&#x52A0;-gt" data-href="#2-&#x6574;&#x4E2A;&#x6BB5;&#x843D;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x8BDD;&#x524D;&#x52A0;-gt"><span class="toc-number"></span> <span class="toc-text">2.0.0.2. 2.&#x6574;&#x4E2A;&#x6BB5;&#x843D;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x8BDD;&#x524D;&#x52A0;&gt;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5F15;&#x7528;&#x5185;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x6839;&#x636E;&#x5C42;&#x6B21;&#x52A0;&#x4E0A;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;-&#x6CE8;&#x610F;&#x4E2D;&#x95F4;&#x52A0;&#x4E2A;-gt-&#x5206;&#x5272;&#x3002;" data-href="#3-&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5F15;&#x7528;&#x5185;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x6839;&#x636E;&#x5C42;&#x6B21;&#x52A0;&#x4E0A;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;-&#x6CE8;&#x610F;&#x4E2D;&#x95F4;&#x52A0;&#x4E2A;-gt-&#x5206;&#x5272;&#x3002;"><span class="toc-number"></span> <span class="toc-text">2.0.0.3. 3.&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5F15;&#x7528;&#x5185;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x6839;&#x636E;&#x5C42;&#x6B21;&#x52A0;&#x4E0A;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;,&#x6CE8;&#x610F;&#x4E2D;&#x95F4;&#x52A0;&#x4E2A;&gt;&#x5206;&#x5272;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#4-&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;-Markdown-&#x8BED;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x9898;&#x3001;&#x5217;&#x8868;&#x3001;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x7B49;&#xFF1A;" data-href="#4-&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;-Markdown-&#x8BED;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x9898;&#x3001;&#x5217;&#x8868;&#x3001;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x7B49;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">2.0.0.4. 4.&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684; Markdown &#x8BED;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x9898;&#x3001;&#x5217;&#x8868;&#x3001;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x7B49;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;" data-href="#&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;"><span class="toc-number"></span> <span class="toc-text">3. &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x662F;&#x51CF;&#x53F7;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x6807;&#x8BB0;&#xFF1A;" data-href="#1-&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x662F;&#x51CF;&#x53F7;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x6807;&#x8BB0;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">3.0.0.1. 1.&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x662F;&#x51CF;&#x53F7;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x6807;&#x8BB0;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6709;&#x5E8F;&#x5217;&#x8868;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x63A5;&#x7740;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x53E5;&#x70B9;" data-href="#2-&#x6709;&#x5E8F;&#x5217;&#x8868;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x63A5;&#x7740;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x53E5;&#x70B9;"><span class="toc-number"></span> <span class="toc-text">3.0.0.2. 2.&#x6709;&#x5E8F;&#x5217;&#x8868;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x63A5;&#x7740;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x53E5;&#x70B9;:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x56DB;-&#x4EE3;&#x7801;&#x533A;&#x5757;" data-href="#&#x56DB;-&#x4EE3;&#x7801;&#x533A;&#x5757;"><span class="toc-number"></span> <span class="toc-text">4. &#x56DB;.&#x4EE3;&#x7801;&#x533A;&#x5757;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x4F7F;&#x7528;-lt-pre-gt-&#x548C;-lt-code-gt-&#x6807;&#x7B7E;&#x6765;&#x628A;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x5305;&#x8D77;&#x6765;" data-href="#1-&#x4F7F;&#x7528;-lt-pre-gt-&#x548C;-lt-code-gt-&#x6807;&#x7B7E;&#x6765;&#x628A;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x5305;&#x8D77;&#x6765;"><span class="toc-number"></span> <span class="toc-text">4.0.0.1. 1.&#x4F7F;&#x7528; &lt;pre&gt; &#x548C; &lt;code&gt; &#x6807;&#x7B7E;&#x6765;&#x628A;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x5305;&#x8D77;&#x6765;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x201C;-&#x201D;&#x5305;&#x5355;&#x884C;&#x4EE3;&#x7801;" data-href="#2-&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x201C;-&#x201D;&#x5305;&#x5355;&#x884C;&#x4EE3;&#x7801;"><span class="toc-number"></span> <span class="toc-text">4.0.0.2. 2.&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x201C;`&#x201D;&#x5305;&#x5355;&#x884C;&#x4EE3;&#x7801;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x4EE3;&#x7801;&#x533A;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;-&#x201C;-&#x201C;-&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528;-&#x201C;-&#x201C;-&#x5C06;-&#x201C;-&#x201C;-&#x5305;&#x8D77;&#x6765;&#x3002;" data-href="#3-&#x4EE3;&#x7801;&#x533A;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;-&#x201C;-&#x201C;-&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528;-&#x201C;-&#x201C;-&#x5C06;-&#x201C;-&#x201C;-&#x5305;&#x8D77;&#x6765;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.3. 3.&#x4EE3;&#x7801;&#x533A;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7; &#x201C;`&#x201C; &#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528; &#x201C;``&#x201C; &#x5C06; &#x201C;`&#x201C; &#x5305;&#x8D77;&#x6765;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#4-&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x201D;-&#x201C;&#x5305;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E14;&#x524D;&#x540E;&#x7684;3&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x5404;&#x5360;&#x4E00;&#x884C;&#x3002;" data-href="#4-&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x201D;-&#x201C;&#x5305;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E14;&#x524D;&#x540E;&#x7684;3&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x5404;&#x5360;&#x4E00;&#x884C;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.4. 4.&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x201D;```&#x201C;&#x5305;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E14;&#x524D;&#x540E;&#x7684;3&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x5404;&#x5360;&#x4E00;&#x884C;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#5-&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x7F29;&#x8FDB;-4-&#x4E2A;&#x7A7A;&#x683C;&#x6216;&#x662F;-1-&#x4E2A;&#x5236;&#x8868;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x3002;" data-href="#5-&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x7F29;&#x8FDB;-4-&#x4E2A;&#x7A7A;&#x683C;&#x6216;&#x662F;-1-&#x4E2A;&#x5236;&#x8868;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.5. 5.&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x7F29;&#x8FDB; 4 &#x4E2A;&#x7A7A;&#x683C;&#x6216;&#x662F; 1 &#x4E2A;&#x5236;&#x8868;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#6-&#x4EE3;&#x7801;&#x5757;&#x5185;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;" data-href="#6-&#x4EE3;&#x7801;&#x5757;&#x5185;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.6. 6.&#x4EE3;&#x7801;&#x5757;&#x5185;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E94;-&#x5206;&#x5272;&#x7EBF;" data-href="#&#x4E94;-&#x5206;&#x5272;&#x7EBF;"><span class="toc-number"></span> <span class="toc-text">5. &#x4E94;.&#x5206;&#x5272;&#x7EBF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x516D;-&#x6587;&#x5B57;&#x6837;&#x5F0F;" data-href="#&#x516D;-&#x6587;&#x5B57;&#x6837;&#x5F0F;"><span class="toc-number"></span> <span class="toc-text">6. &#x516D;.&#x6587;&#x5B57;&#x6837;&#x5F0F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x5F3A;&#x8C03;&#xFF0C;Markdown-&#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;-&#xFF09;&#x548C;&#x5E95;&#x7EBF;&#xFF08;-&#xFF09;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x5F3A;&#x8C03;&#x5B57;&#x8BCD;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;" data-href="#1-&#x5F3A;&#x8C03;&#xFF0C;Markdown-&#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;-&#xFF09;&#x548C;&#x5E95;&#x7EBF;&#xFF08;-&#xFF09;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x5F3A;&#x8C03;&#x5B57;&#x8BCD;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.1. 1.&#x5F3A;&#x8C03;&#xFF0C;Markdown &#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;*&#xFF09;&#x548C;&#x5E95;&#x7EBF;&#xFF08;_&#xFF09;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x5F3A;&#x8C03;&#x5B57;&#x8BCD;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x5F3A;&#x8C03;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D2;&#x5728;&#x6587;&#x5B57;&#x4E2D;&#x95F4;&#xFF1A;" data-href="#2-&#x5F3A;&#x8C03;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D2;&#x5728;&#x6587;&#x5B57;&#x4E2D;&#x95F4;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.2. 2.&#x5F3A;&#x8C03;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D2;&#x5728;&#x6587;&#x5B57;&#x4E2D;&#x95F4;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5220;&#x9664;&#x7EBF;&#xFF1A;" data-href="#3-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5220;&#x9664;&#x7EBF;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.3. 3.&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;~~&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5220;&#x9664;&#x7EBF;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#4-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x9AD8;&#x4EAE;-Hexo&#x4E0D;&#x652F;&#x6301;-&#xFF1A;" data-href="#4-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x9AD8;&#x4EAE;-Hexo&#x4E0D;&#x652F;&#x6301;-&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.4. 4.&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;==&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x9AD8;&#x4EAE;(Hexo&#x4E0D;&#x652F;&#x6301;)&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#5-&#x4E0A;&#x4E0B;&#x6807;&#x6587;&#x5B57;&#xFF1A;" data-href="#5-&#x4E0A;&#x4E0B;&#x6807;&#x6587;&#x5B57;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.5. 5.&#x4E0A;&#x4E0B;&#x6807;&#x6587;&#x5B57;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E03;-&#x53CD;&#x659C;&#x6760;" data-href="#&#x4E03;-&#x53CD;&#x659C;&#x6760;"><span class="toc-number"></span> <span class="toc-text">7. &#x4E03;.&#x53CD;&#x659C;&#x6760;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x516B;-&#x8868;&#x683C;" data-href="#&#x516B;-&#x8868;&#x683C;"><span class="toc-number"></span> <span class="toc-text">8. &#x516B;.&#x8868;&#x683C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E5D;-&#x8D85;&#x94FE;&#x63A5;" data-href="#&#x4E5D;-&#x8D85;&#x94FE;&#x63A5;"><span class="toc-number"></span> <span class="toc-text">9. &#x4E5D;.&#x8D85;&#x94FE;&#x63A5;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#x3002;" data-href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#x3002;"><span class="toc-number"></span> <span class="toc-text">9.0.0.1. 1.&#x884C;&#x5185;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x94FE;&#x63A5;&#x5230;&#x76F8;&#x540C;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x3002;" data-href="#2-&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x94FE;&#x63A5;&#x5230;&#x76F8;&#x540C;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x3002;"><span class="toc-number"></span> <span class="toc-text">9.0.0.2. 2.&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x94FE;&#x63A5;&#x5230;&#x76F8;&#x540C;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x53C2;&#x8003;&#x5F0F;&#x94FE;&#x63A5;-&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5185;&#x5BB9;&#x914D;&#x5408;&#x3002;" data-href="#3-&#x53C2;&#x8003;&#x5F0F;&#x94FE;&#x63A5;-&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5185;&#x5BB9;&#x914D;&#x5408;&#x3002;"><span class="toc-number"></span> <span class="toc-text">9.0.0.3. 3.&#x53C2;&#x8003;&#x5F0F;&#x94FE;&#x63A5;,&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5185;&#x5BB9;&#x914D;&#x5408;&#x3002;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;-&#x56FE;&#x7247;" data-href="#&#x5341;-&#x56FE;&#x7247;"><span class="toc-number"></span> <span class="toc-text">10. &#x5341;.&#x56FE;&#x7247;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;" data-href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">10.0.0.1. 1.&#x884C;&#x5185;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x53C2;&#x8003;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;" data-href="#2-&#x53C2;&#x8003;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">10.0.0.2. 2.&#x53C2;&#x8003;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E00;-&#x811A;&#x6CE8;&#x548C;&#x6CE8;&#x91CA;&#xFF08;Hexo-&#x4E0D;&#x652F;&#x6301;&#xFF09;" data-href="#&#x5341;&#x4E00;-&#x811A;&#x6CE8;&#x548C;&#x6CE8;&#x91CA;&#xFF08;Hexo-&#x4E0D;&#x652F;&#x6301;&#xFF09;"><span class="toc-number"></span> <span class="toc-text">11. &#x5341;&#x4E00;.&#x811A;&#x6CE8;&#x548C;&#x6CE8;&#x91CA;&#xFF08;Hexo &#x4E0D;&#x652F;&#x6301;&#xFF09;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x4F7F;&#x7528;-&#x5B9A;&#x4E49;&#x811A;&#x6CE8;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;" data-href="#1-&#x4F7F;&#x7528;-&#x5B9A;&#x4E49;&#x811A;&#x6CE8;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">11.0.0.1. 1.&#x4F7F;&#x7528;[^]&#x5B9A;&#x4E49;&#x811A;&#x6CE8;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6CE8;&#x91CA;&#x53EA;&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#x51FA;&#x73B0;&#xFF1A;" data-href="#2-&#x6CE8;&#x91CA;&#x53EA;&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#x51FA;&#x73B0;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">11.0.0.2. 2.&#x6CE8;&#x91CA;&#x53EA;&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#x51FA;&#x73B0;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E8C;-Markdown&#x4E2D;&#x5E38;&#x7528;&#x7684;Html&#x6807;&#x7B7E;" data-href="#&#x5341;&#x4E8C;-Markdown&#x4E2D;&#x5E38;&#x7528;&#x7684;Html&#x6807;&#x7B7E;"><span class="toc-number"></span> <span class="toc-text">12. &#x5341;&#x4E8C;.Markdown&#x4E2D;&#x5E38;&#x7528;&#x7684;Html&#x6807;&#x7B7E;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x5B57;&#x4F53;" data-href="#1-&#x5B57;&#x4F53;"><span class="toc-number"></span> <span class="toc-text">12.0.0.1. 1.&#x5B57;&#x4F53;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6362;&#x884C;&#x7B26;" data-href="#2-&#x6362;&#x884C;&#x7B26;"><span class="toc-number"></span> <span class="toc-text">12.0.0.2. 2.&#x6362;&#x884C;&#x7B26;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x6587;&#x672C;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;" data-href="#3-&#x6587;&#x672C;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;"><span class="toc-number"></span> <span class="toc-text">12.0.0.3. 3.&#x6587;&#x672C;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E09;-&#x4EFB;&#x52A1;&#x5217;&#x8868;" data-href="#&#x5341;&#x4E09;-&#x4EFB;&#x52A1;&#x5217;&#x8868;"><span class="toc-number"></span> <span class="toc-text">13. &#x5341;&#x4E09;.&#x4EFB;&#x52A1;&#x5217;&#x8868;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x56DB;-&#x81EA;&#x52A8;&#x94FE;&#x63A5;&#x548C;&#x76EE;&#x5F55;" data-href="#&#x5341;&#x56DB;-&#x81EA;&#x52A8;&#x94FE;&#x63A5;&#x548C;&#x76EE;&#x5F55;"><span class="toc-number"></span> <span class="toc-text">14. &#x5341;&#x56DB;.&#x81EA;&#x52A8;&#x94FE;&#x63A5;&#x548C;&#x76EE;&#x5F55;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x81EA;&#x52A8;&#x94FE;&#x63A5;" data-href="#1-&#x81EA;&#x52A8;&#x94FE;&#x63A5;"><span class="toc-number"></span> <span class="toc-text">14.0.0.1. 1.&#x81EA;&#x52A8;&#x94FE;&#x63A5;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x76EE;&#x5F55;" data-href="#2-&#x76EE;&#x5F55;"><span class="toc-number"></span> <span class="toc-text">14.0.0.2. 2.&#x76EE;&#x5F55;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E94;-&#x6D41;&#x7A0B;&#x56FE;-Hexo-&#x4E0D;&#x652F;&#x6301;" data-href="#&#x5341;&#x4E94;-&#x6D41;&#x7A0B;&#x56FE;-Hexo-&#x4E0D;&#x652F;&#x6301;"><span class="toc-number"></span> <span class="toc-text">15. &#x5341;&#x4E94;.&#x6D41;&#x7A0B;&#x56FE;(Hexo &#x4E0D;&#x652F;&#x6301;)</span></a></li>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="theme-spacer"></div>
+
+  
+    <div class="mdui-color-theme theme-post__toc-fab">
+  <button class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" mdui-menu="{target: '#toc-fab-menu', fixed: true}" id="toc-fab">
+    <i class="mdui-icon material-icons">&#xe242;</i>
+  </button>
+  <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab-menu" style="padding: 8px;max-height: 80%">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E00;-&#x6807;&#x9898;" data-href="#&#x4E00;-&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text">1. &#x4E00;.&#x6807;&#x9898;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x4E24;&#x4E2A;-&#x6216;&#x8005;&#x4E24;&#x4E2A;-&#x5BF9;&#x5E94;1&#x3001;2&#x9636;&#x6807;&#x9898;" data-href="#1-&#x4E24;&#x4E2A;-&#x6216;&#x8005;&#x4E24;&#x4E2A;-&#x5BF9;&#x5E94;1&#x3001;2&#x9636;&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text">1.0.0.1. 1. &#x4E24;&#x4E2A;= &#x6216;&#x8005;&#x4E24;&#x4E2A;- &#x5BF9;&#x5E94;1&#x3001;2&#x9636;&#x6807;&#x9898;</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#This-is-an-H1-&#x6700;&#x9AD8;&#x9636;&#x6807;&#x9898;" data-href="#This-is-an-H1-&#x6700;&#x9AD8;&#x9636;&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text"> This is an H1(=&#x6700;&#x9AD8;&#x9636;&#x6807;&#x9898;)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#This-is-an-H2-&#x7B2C;&#x4E8C;&#x9636;&#x6807;&#x9898;" data-href="#This-is-an-H2-&#x7B2C;&#x4E8C;&#x9636;&#x6807;&#x9898;"><span class="toc-number"></span> <span class="toc-text">1. This is an H2(-&#x7B2C;&#x4E8C;&#x9636;&#x6807;&#x9898;)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x5728;&#x884C;&#x9996;&#x63D2;&#x5165;-1-&#x5230;-6-&#x4E2A;-&#xFF0C;&#x5BF9;&#x5E94;&#x5230;&#x6807;&#x9898;-1-&#x5230;-6-&#x9636;" data-href="#2-&#x5728;&#x884C;&#x9996;&#x63D2;&#x5165;-1-&#x5230;-6-&#x4E2A;-&#xFF0C;&#x5BF9;&#x5E94;&#x5230;&#x6807;&#x9898;-1-&#x5230;-6-&#x9636;"><span class="toc-number"></span> <span class="toc-text">1.0.0.1. 2.&#x5728;&#x884C;&#x9996;&#x63D2;&#x5165; 1 &#x5230; 6 &#x4E2A; # &#xFF0C;&#x5BF9;&#x5E94;&#x5230;&#x6807;&#x9898; 1 &#x5230; 6 &#x9636;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;-H1" data-href="#&#x8FD9;&#x662F;-H1"><span class="toc-number"></span> <span class="toc-text"> &#x8FD9;&#x662F; H1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;-H2" data-href="#&#x8FD9;&#x662F;-H2"><span class="toc-number"></span> <span class="toc-text">1. &#x8FD9;&#x662F; H2</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;-H6" data-href="#&#x8FD9;&#x662F;-H6"><span class="toc-number"></span> <span class="toc-text">1.0.0.0.1. &#x8FD9;&#x662F; H6</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E8C;-&#x533A;&#x5757;&#x5F15;&#x7528;-Blockquotes" data-href="#&#x4E8C;-&#x533A;&#x5757;&#x5F15;&#x7528;-Blockquotes"><span class="toc-number"></span> <span class="toc-text">2. &#x4E8C;.&#x533A;&#x5757;&#x5F15;&#x7528; Blockquotes</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x6BCF;&#x884C;&#x8BDD;&#x524D;&#x90FD;&#x52A0;-gt" data-href="#1-&#x6BCF;&#x884C;&#x8BDD;&#x524D;&#x90FD;&#x52A0;-gt"><span class="toc-number"></span> <span class="toc-text">2.0.0.1. 1.&#x6BCF;&#x884C;&#x8BDD;&#x524D;&#x90FD;&#x52A0;&gt;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6574;&#x4E2A;&#x6BB5;&#x843D;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x8BDD;&#x524D;&#x52A0;-gt" data-href="#2-&#x6574;&#x4E2A;&#x6BB5;&#x843D;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x8BDD;&#x524D;&#x52A0;-gt"><span class="toc-number"></span> <span class="toc-text">2.0.0.2. 2.&#x6574;&#x4E2A;&#x6BB5;&#x843D;&#x7684;&#x7B2C;&#x4E00;&#x53E5;&#x8BDD;&#x524D;&#x52A0;&gt;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5F15;&#x7528;&#x5185;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x6839;&#x636E;&#x5C42;&#x6B21;&#x52A0;&#x4E0A;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;-&#x6CE8;&#x610F;&#x4E2D;&#x95F4;&#x52A0;&#x4E2A;-gt-&#x5206;&#x5272;&#x3002;" data-href="#3-&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5F15;&#x7528;&#x5185;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x6839;&#x636E;&#x5C42;&#x6B21;&#x52A0;&#x4E0A;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;-&#x6CE8;&#x610F;&#x4E2D;&#x95F4;&#x52A0;&#x4E2A;-gt-&#x5206;&#x5272;&#x3002;"><span class="toc-number"></span> <span class="toc-text">2.0.0.3. 3.&#x533A;&#x5757;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF08;&#x4F8B;&#x5982;&#xFF1A;&#x5F15;&#x7528;&#x5185;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x6839;&#x636E;&#x5C42;&#x6B21;&#x52A0;&#x4E0A;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;,&#x6CE8;&#x610F;&#x4E2D;&#x95F4;&#x52A0;&#x4E2A;&gt;&#x5206;&#x5272;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#4-&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;-Markdown-&#x8BED;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x9898;&#x3001;&#x5217;&#x8868;&#x3001;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x7B49;&#xFF1A;" data-href="#4-&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;-Markdown-&#x8BED;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x9898;&#x3001;&#x5217;&#x8868;&#x3001;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x7B49;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">2.0.0.4. 4.&#x5F15;&#x7528;&#x7684;&#x533A;&#x5757;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684; Markdown &#x8BED;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x9898;&#x3001;&#x5217;&#x8868;&#x3001;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x7B49;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;" data-href="#&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;"><span class="toc-number"></span> <span class="toc-text">3. &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x9898;&#x3002;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x662F;&#x51CF;&#x53F7;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x6807;&#x8BB0;&#xFF1A;" data-href="#1-&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x662F;&#x51CF;&#x53F7;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x6807;&#x8BB0;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">3.0.0.1. 1.&#x65E0;&#x5E8F;&#x5217;&#x8868;&#x4F7F;&#x7528;&#x661F;&#x53F7;&#x3001;&#x52A0;&#x53F7;&#x6216;&#x662F;&#x51CF;&#x53F7;&#x4F5C;&#x4E3A;&#x5217;&#x8868;&#x6807;&#x8BB0;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6709;&#x5E8F;&#x5217;&#x8868;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x63A5;&#x7740;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x53E5;&#x70B9;" data-href="#2-&#x6709;&#x5E8F;&#x5217;&#x8868;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x63A5;&#x7740;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x53E5;&#x70B9;"><span class="toc-number"></span> <span class="toc-text">3.0.0.2. 2.&#x6709;&#x5E8F;&#x5217;&#x8868;&#x5219;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x63A5;&#x7740;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x53E5;&#x70B9;:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x56DB;-&#x4EE3;&#x7801;&#x533A;&#x5757;" data-href="#&#x56DB;-&#x4EE3;&#x7801;&#x533A;&#x5757;"><span class="toc-number"></span> <span class="toc-text">4. &#x56DB;.&#x4EE3;&#x7801;&#x533A;&#x5757;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x4F7F;&#x7528;-lt-pre-gt-&#x548C;-lt-code-gt-&#x6807;&#x7B7E;&#x6765;&#x628A;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x5305;&#x8D77;&#x6765;" data-href="#1-&#x4F7F;&#x7528;-lt-pre-gt-&#x548C;-lt-code-gt-&#x6807;&#x7B7E;&#x6765;&#x628A;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x5305;&#x8D77;&#x6765;"><span class="toc-number"></span> <span class="toc-text">4.0.0.1. 1.&#x4F7F;&#x7528; &lt;pre&gt; &#x548C; &lt;code&gt; &#x6807;&#x7B7E;&#x6765;&#x628A;&#x4EE3;&#x7801;&#x533A;&#x5757;&#x5305;&#x8D77;&#x6765;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x201C;-&#x201D;&#x5305;&#x5355;&#x884C;&#x4EE3;&#x7801;" data-href="#2-&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x201C;-&#x201D;&#x5305;&#x5355;&#x884C;&#x4EE3;&#x7801;"><span class="toc-number"></span> <span class="toc-text">4.0.0.2. 2.&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x201C;`&#x201D;&#x5305;&#x5355;&#x884C;&#x4EE3;&#x7801;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x4EE3;&#x7801;&#x533A;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;-&#x201C;-&#x201C;-&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528;-&#x201C;-&#x201C;-&#x5C06;-&#x201C;-&#x201C;-&#x5305;&#x8D77;&#x6765;&#x3002;" data-href="#3-&#x4EE3;&#x7801;&#x533A;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;-&#x201C;-&#x201C;-&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528;-&#x201C;-&#x201C;-&#x5C06;-&#x201C;-&#x201C;-&#x5305;&#x8D77;&#x6765;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.3. 3.&#x4EE3;&#x7801;&#x533A;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7; &#x201C;`&#x201C; &#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x7528; &#x201C;``&#x201C; &#x5C06; &#x201C;`&#x201C; &#x5305;&#x8D77;&#x6765;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#4-&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x201D;-&#x201C;&#x5305;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E14;&#x524D;&#x540E;&#x7684;3&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x5404;&#x5360;&#x4E00;&#x884C;&#x3002;" data-href="#4-&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x201D;-&#x201C;&#x5305;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E14;&#x524D;&#x540E;&#x7684;3&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x5404;&#x5360;&#x4E00;&#x884C;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.4. 4.&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x201D;```&#x201C;&#x5305;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x4E14;&#x524D;&#x540E;&#x7684;3&#x4E2A;&#x53CD;&#x5F15;&#x53F7;&#x5404;&#x5360;&#x4E00;&#x884C;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#5-&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x7F29;&#x8FDB;-4-&#x4E2A;&#x7A7A;&#x683C;&#x6216;&#x662F;-1-&#x4E2A;&#x5236;&#x8868;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x3002;" data-href="#5-&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x7F29;&#x8FDB;-4-&#x4E2A;&#x7A7A;&#x683C;&#x6216;&#x662F;-1-&#x4E2A;&#x5236;&#x8868;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.5. 5.&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x8981;&#x7B80;&#x5355;&#x5730;&#x7F29;&#x8FDB; 4 &#x4E2A;&#x7A7A;&#x683C;&#x6216;&#x662F; 1 &#x4E2A;&#x5236;&#x8868;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#6-&#x4EE3;&#x7801;&#x5757;&#x5185;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;" data-href="#6-&#x4EE3;&#x7801;&#x5757;&#x5185;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;"><span class="toc-number"></span> <span class="toc-text">4.0.0.6. 6.&#x4EE3;&#x7801;&#x5757;&#x5185;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#x3002;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E94;-&#x5206;&#x5272;&#x7EBF;" data-href="#&#x4E94;-&#x5206;&#x5272;&#x7EBF;"><span class="toc-number"></span> <span class="toc-text">5. &#x4E94;.&#x5206;&#x5272;&#x7EBF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x516D;-&#x6587;&#x5B57;&#x6837;&#x5F0F;" data-href="#&#x516D;-&#x6587;&#x5B57;&#x6837;&#x5F0F;"><span class="toc-number"></span> <span class="toc-text">6. &#x516D;.&#x6587;&#x5B57;&#x6837;&#x5F0F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x5F3A;&#x8C03;&#xFF0C;Markdown-&#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;-&#xFF09;&#x548C;&#x5E95;&#x7EBF;&#xFF08;-&#xFF09;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x5F3A;&#x8C03;&#x5B57;&#x8BCD;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;" data-href="#1-&#x5F3A;&#x8C03;&#xFF0C;Markdown-&#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;-&#xFF09;&#x548C;&#x5E95;&#x7EBF;&#xFF08;-&#xFF09;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x5F3A;&#x8C03;&#x5B57;&#x8BCD;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.1. 1.&#x5F3A;&#x8C03;&#xFF0C;Markdown &#x4F7F;&#x7528;&#x661F;&#x53F7;&#xFF08;*&#xFF09;&#x548C;&#x5E95;&#x7EBF;&#xFF08;_&#xFF09;&#x4F5C;&#x4E3A;&#x6807;&#x8BB0;&#x5F3A;&#x8C03;&#x5B57;&#x8BCD;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x5F3A;&#x8C03;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D2;&#x5728;&#x6587;&#x5B57;&#x4E2D;&#x95F4;&#xFF1A;" data-href="#2-&#x5F3A;&#x8C03;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D2;&#x5728;&#x6587;&#x5B57;&#x4E2D;&#x95F4;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.2. 2.&#x5F3A;&#x8C03;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x63D2;&#x5728;&#x6587;&#x5B57;&#x4E2D;&#x95F4;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5220;&#x9664;&#x7EBF;&#xFF1A;" data-href="#3-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5220;&#x9664;&#x7EBF;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.3. 3.&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;~~&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5220;&#x9664;&#x7EBF;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#4-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x9AD8;&#x4EAE;-Hexo&#x4E0D;&#x652F;&#x6301;-&#xFF1A;" data-href="#4-&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;-&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x9AD8;&#x4EAE;-Hexo&#x4E0D;&#x652F;&#x6301;-&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.4. 4.&#x6587;&#x672C;&#x4E24;&#x7AEF;&#x589E;&#x52A0;==&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x9AD8;&#x4EAE;(Hexo&#x4E0D;&#x652F;&#x6301;)&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#5-&#x4E0A;&#x4E0B;&#x6807;&#x6587;&#x5B57;&#xFF1A;" data-href="#5-&#x4E0A;&#x4E0B;&#x6807;&#x6587;&#x5B57;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">6.0.0.5. 5.&#x4E0A;&#x4E0B;&#x6807;&#x6587;&#x5B57;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E03;-&#x53CD;&#x659C;&#x6760;" data-href="#&#x4E03;-&#x53CD;&#x659C;&#x6760;"><span class="toc-number"></span> <span class="toc-text">7. &#x4E03;.&#x53CD;&#x659C;&#x6760;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x516B;-&#x8868;&#x683C;" data-href="#&#x516B;-&#x8868;&#x683C;"><span class="toc-number"></span> <span class="toc-text">8. &#x516B;.&#x8868;&#x683C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x4E5D;-&#x8D85;&#x94FE;&#x63A5;" data-href="#&#x4E5D;-&#x8D85;&#x94FE;&#x63A5;"><span class="toc-number"></span> <span class="toc-text">9. &#x4E5D;.&#x8D85;&#x94FE;&#x63A5;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#x3002;" data-href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#x3002;"><span class="toc-number"></span> <span class="toc-text">9.0.0.1. 1.&#x884C;&#x5185;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x94FE;&#x63A5;&#x5230;&#x76F8;&#x540C;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x3002;" data-href="#2-&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x94FE;&#x63A5;&#x5230;&#x76F8;&#x540C;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x3002;"><span class="toc-number"></span> <span class="toc-text">9.0.0.2. 2.&#x53EF;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x94FE;&#x63A5;&#x5230;&#x76F8;&#x540C;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x3002;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x53C2;&#x8003;&#x5F0F;&#x94FE;&#x63A5;-&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5185;&#x5BB9;&#x914D;&#x5408;&#x3002;" data-href="#3-&#x53C2;&#x8003;&#x5F0F;&#x94FE;&#x63A5;-&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5185;&#x5BB9;&#x914D;&#x5408;&#x3002;"><span class="toc-number"></span> <span class="toc-text">9.0.0.3. 3.&#x53C2;&#x8003;&#x5F0F;&#x94FE;&#x63A5;,&#x9700;&#x8981;&#x94FE;&#x63A5;&#x5185;&#x5BB9;&#x914D;&#x5408;&#x3002;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;-&#x56FE;&#x7247;" data-href="#&#x5341;-&#x56FE;&#x7247;"><span class="toc-number"></span> <span class="toc-text">10. &#x5341;.&#x56FE;&#x7247;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;" data-href="#1-&#x884C;&#x5185;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">10.0.0.1. 1.&#x884C;&#x5185;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x53C2;&#x8003;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;" data-href="#2-&#x53C2;&#x8003;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">10.0.0.2. 2.&#x53C2;&#x8003;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#x8BED;&#x6CD5;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E00;-&#x811A;&#x6CE8;&#x548C;&#x6CE8;&#x91CA;&#xFF08;Hexo-&#x4E0D;&#x652F;&#x6301;&#xFF09;" data-href="#&#x5341;&#x4E00;-&#x811A;&#x6CE8;&#x548C;&#x6CE8;&#x91CA;&#xFF08;Hexo-&#x4E0D;&#x652F;&#x6301;&#xFF09;"><span class="toc-number"></span> <span class="toc-text">11. &#x5341;&#x4E00;.&#x811A;&#x6CE8;&#x548C;&#x6CE8;&#x91CA;&#xFF08;Hexo &#x4E0D;&#x652F;&#x6301;&#xFF09;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x4F7F;&#x7528;-&#x5B9A;&#x4E49;&#x811A;&#x6CE8;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;" data-href="#1-&#x4F7F;&#x7528;-&#x5B9A;&#x4E49;&#x811A;&#x6CE8;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">11.0.0.1. 1.&#x4F7F;&#x7528;[^]&#x5B9A;&#x4E49;&#x811A;&#x6CE8;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6CE8;&#x91CA;&#x53EA;&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#x51FA;&#x73B0;&#xFF1A;" data-href="#2-&#x6CE8;&#x91CA;&#x53EA;&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#x51FA;&#x73B0;&#xFF1A;"><span class="toc-number"></span> <span class="toc-text">11.0.0.2. 2.&#x6CE8;&#x91CA;&#x53EA;&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#x51FA;&#x73B0;&#xFF1A;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E8C;-Markdown&#x4E2D;&#x5E38;&#x7528;&#x7684;Html&#x6807;&#x7B7E;" data-href="#&#x5341;&#x4E8C;-Markdown&#x4E2D;&#x5E38;&#x7528;&#x7684;Html&#x6807;&#x7B7E;"><span class="toc-number"></span> <span class="toc-text">12. &#x5341;&#x4E8C;.Markdown&#x4E2D;&#x5E38;&#x7528;&#x7684;Html&#x6807;&#x7B7E;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x5B57;&#x4F53;" data-href="#1-&#x5B57;&#x4F53;"><span class="toc-number"></span> <span class="toc-text">12.0.0.1. 1.&#x5B57;&#x4F53;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x6362;&#x884C;&#x7B26;" data-href="#2-&#x6362;&#x884C;&#x7B26;"><span class="toc-number"></span> <span class="toc-text">12.0.0.2. 2.&#x6362;&#x884C;&#x7B26;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#3-&#x6587;&#x672C;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;" data-href="#3-&#x6587;&#x672C;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;"><span class="toc-number"></span> <span class="toc-text">12.0.0.3. 3.&#x6587;&#x672C;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E09;-&#x4EFB;&#x52A1;&#x5217;&#x8868;" data-href="#&#x5341;&#x4E09;-&#x4EFB;&#x52A1;&#x5217;&#x8868;"><span class="toc-number"></span> <span class="toc-text">13. &#x5341;&#x4E09;.&#x4EFB;&#x52A1;&#x5217;&#x8868;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x56DB;-&#x81EA;&#x52A8;&#x94FE;&#x63A5;&#x548C;&#x76EE;&#x5F55;" data-href="#&#x5341;&#x56DB;-&#x81EA;&#x52A8;&#x94FE;&#x63A5;&#x548C;&#x76EE;&#x5F55;"><span class="toc-number"></span> <span class="toc-text">14. &#x5341;&#x56DB;.&#x81EA;&#x52A8;&#x94FE;&#x63A5;&#x548C;&#x76EE;&#x5F55;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#1-&#x81EA;&#x52A8;&#x94FE;&#x63A5;" data-href="#1-&#x81EA;&#x52A8;&#x94FE;&#x63A5;"><span class="toc-number"></span> <span class="toc-text">14.0.0.1. 1.&#x81EA;&#x52A8;&#x94FE;&#x63A5;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#2-&#x76EE;&#x5F55;" data-href="#2-&#x76EE;&#x5F55;"><span class="toc-number"></span> <span class="toc-text">14.0.0.2. 2.&#x76EE;&#x5F55;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link mdui-list-item mdui-ripple theme-post__toc__content__link" href="#&#x5341;&#x4E94;-&#x6D41;&#x7A0B;&#x56FE;-Hexo-&#x4E0D;&#x652F;&#x6301;" data-href="#&#x5341;&#x4E94;-&#x6D41;&#x7A0B;&#x56FE;-Hexo-&#x4E0D;&#x652F;&#x6301;"><span class="toc-number"></span> <span class="toc-text">15. &#x5341;&#x4E94;.&#x6D41;&#x7A0B;&#x56FE;(Hexo &#x4E0D;&#x652F;&#x6301;)</span></a></li>
+  </ul>
+</div>
+
+  
+
+  
+    <div class="theme-post__pagination mdui-color-theme">
+  
+    <div class="theme-post__pagination__prev mdui-ripple mdui-valign">
+      <a href="/year/05/31/Hexo使用总结(待完善)/" class="theme-post__pagination__prev__content mdui-text-left">
+        <div>
+          <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
+          <span class="mdui-typo-body-2-opacity mdui-text-center">新的文章</span>
+        </div>
+        <div class="mdui-typo-title mdui-text-truncate">
+          Hexo使用总结(待完善)
+        </div>
+      </a>
+    </div>
+  
+
+  
+      <div class="theme-spacer mdui-hidden-xs"></div>
+    
+</div>
+
+  
+
+  
+    <div class="mdui-dialog" id="donateDialog">
+      <div class="mdui-dialog-title">打赏</div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          
+            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
+              
+              
+              
+              wechat
+            </a>
+          
+            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
+              
+              
+              
+              paypay
+            </a>
+          
+        </div>
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close>不要</button>
+      </div>
+    </div>
+  
+</div>
+<script type="text/javascript">
+  themeRuntime.scriptsMap.post = [];
+  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
+    tocHighlight()
+    function tocHighlight() {
+      var timer;
+      function doWork() {
+        listens.forEach(function(value, index) {
+          value[1]();
+          value[0].classList.remove("mdui-list-item-active");
+        })
+        let actionToc = (listens[listens.reduce(function(r, v, index) {
+          if (v[2] == true) {
+            return index;
+          } else return r;
+        }, undefined)] || [])[0] || listens[0][0];
+        actionToc.classList.add("mdui-list-item-active");
+        if(actionToc.getClientRects().length == 0)return;
+        showToc(actionToc);
+      }
+      function showToc(toc) {
+        let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+        let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+        let offset = 0;
+        if (offsetTop < 0) offset = offsetTop;
+        if (offsetBottom > 0) offset = offsetBottom;
+        var targetTop = Math.max(0, Math.min(cardToc.scrollTop + offset, toclist.offsetHeight - cardToc.offsetHeight));
+        clearInterval(timer);
+        timer = setInterval(function() {
+          var now = cardToc.scrollTop;
+          var speed = (targetTop - now) / 10;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Math.abs(now - targetTop) < 1) {
+            clearInterval(timer);
+          }
+          cardToc.scrollTop = now + speed;
+        }, 30);
+      }
+      var listens = [];
+      var cardToc = document.querySelector('.theme-post__toc');
+      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
+      var toclist = document.querySelector(".theme-post__toc > ol");
+      Array.prototype.forEach.call(links, function(value, index) {
+        var id = (value.getAttribute("href") || "#").slice(1);
+        var element = document.getElementById(id);
+        listens.push([value, function() {
+          var readed = false;
+          var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
+            readed = true;
+          } else {
+            readed = false;
+          }
+          listens[index][2] = readed;
+        }, false])
+      })
+      doWork();
+      window.addEventListener("scroll", doWork)
+      var listener = {
+        function:  doWork,
+        event: 'scroll',
+        el: window,
+        removed: false
+      }
+      themeRuntime.scriptsMap.post.push(listener)
+    }
+  }
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var postLastModifiedDate = 1559269976000
+    var today = (new Date()).getTime()
+    var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
+    if (difference >= 100) {
+      document.querySelector('.theme-post__card__warning').style.display = 'block'
+      document.querySelector('#content-warning').textContent = difference
+    }
+  })();
+</script>
+
+<script type="text/javascript">
+  var images = document.querySelectorAll('.theme-post__card__content img')
+  for (i = 0; i < images.length; i++) {
+    //console.log('image added', i)
+    images[i].addEventListener("click", openLG);
+    var listener = {
+      function:  openLG,
+      event: 'click',
+      el: images[i],
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+  }
+  function openLG() {
+    var img_src = this.getAttribute('src');
+    var img_alt = this.getAttribute('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author>Will</span><div descr>" + img_alt + "</div>"
+      }],
+    });
+  }
+</script>
+
+
+
+
+      </div>
+    </div>
+  </main>
+
+  <div id="outdated" style="z-index: 9999;">
+    <h6>你的浏览器已经过气辣！</h6>
+    <p>赶紧升级浏览器来访问本站吧！<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">现在就去</a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="关闭">&times;</a></p>
+  </div>
+  <!-- import js -->
+
+
+  <script src="/js/outdatedbrowser.min.js"></script>
+
+
+
+  
+    <script src="/js/js.barba.min.js"></script>
+    <script type="text/javascript">
+      Barba.Utils.errorPageUrl = '/404.html';
+    </script>
+  
+
+
+<!-- theme js -->
+<script type="text/javascript">
+  (function() {
+    var appbarTopFlag = false;
+    var appbarEl = document.querySelector('.theme-appbar');
+    function appbarShadow() {
+      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      if (bodyScrolled > 0 && !appbarTopFlag) {
+        appbarEl.classList.add('theme-appbar--shadow');
+        appbarTopFlag = true;
+      } else if (bodyScrolled === 0 && appbarTopFlag) {
+        appbarEl.classList.remove('theme-appbar--shadow');
+        appbarTopFlag = false;
+      }
+    }
+    appbarShadow()
+    window.addEventListener('scroll', appbarShadow);
+  })();
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+  document.querySelector('body').classList.add('theme-loaded')
+</script>
+
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html >
+<html lang="zh">
 
 
 
@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>Search - Hexo</title>
+  <title>搜索 - Will‘s Blog</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -46,12 +46,12 @@
 
   <meta name="theme-color" content="#fff">
 
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Will">
   
   <meta name="keywords" content="blog, hexo, mdui">
 
   <!--iOS -->
-  <meta name="apple-mobile-web-app-title" content="Hexo">
+  <meta name="apple-mobile-web-app-title" content="Will‘s Blog">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="HandheldFriendly" content="True">
@@ -63,7 +63,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="http://yoursite.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="Search - Hexo | Hexo">
+  <meta property="og:title" content="搜索 - Will‘s Blog | Will‘s Blog">
   <meta property="og:image" content="/images/favicon.png">
   
 
@@ -229,7 +229,7 @@
     
   </div>
   <div class="mdui-toolbar theme-toolbar-bottom">
-    <span class="theme-toolbar-bottom__title">Hexo</span>
+    <span class="theme-toolbar-bottom__title">Will‘s Blog</span>
     
       <a href="/search.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
         <i class="mdui-icon material-icons">&#xe8b6;</i>
@@ -255,14 +255,14 @@
       
     </div>
     <div class="mdui-toolbar theme-toolbar-bottom">
-      <span class="theme-toolbar-bottom__title">Hexo</span>
+      <span class="theme-toolbar-bottom__title">Will‘s Blog</span>
     </div>
   </div>
   <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
     <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png">
     <div class="theme-drawer__header__layer-2__user__info">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
-        John Doe
+        Will
       </div>
       <div class="theme-drawer__header__layer-2__user__info__slogan mdui-text-color-white-secondary">
         I&#39;m your slogan!
@@ -277,19 +277,59 @@
   <ul class="mdui-list">
     <a href="/" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
-      <div class="mdui-list-item-content">Index</div>
+      <div class="mdui-list-item-content">首页</div>
     </a>
     <a href="/archives/" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
-      <div class="mdui-list-item-content">Archives</div>
+      <div class="mdui-list-item-content">归档</div>
     </a>
     <ul class="mdui-list mdui-collapse" mdui-collapse="{accordion: true}">
       
+        <div class="mdui-collapse-item ">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
+            <div class="mdui-list-item-content">分类</div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+          </div>
+          <div class="mdui-collapse-item-body mdui-list">
+            
+              <a href="/categories/工具类知识/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                工具类知识
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>2</span>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+        <div class="mdui-collapse-item ">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
+            <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
+            <div class="mdui-list-item-content">标签</div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+          </div>
+          <div class="mdui-collapse-item-body mdui-list">
+            
+              <a href="/tags/Markdown/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                Markdown
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
+              </a>
+            
+              <a href="/tags/Hexo/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+                Hexo
+                <div style="flex-grow: 1;"></div>
+                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
+              </a>
+            
+          </div>
+        </div>
       
       <div class="mdui-collapse-item ">
         <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
           <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
-          <div class="mdui-list-item-content">Years</div>
+          <div class="mdui-list-item-content">年份</div>
           <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
         </div>
         <div class="mdui-collapse-item-body mdui-list">
@@ -390,13 +430,13 @@
     <span>
       Copyright ©
       <span year></span>
-      John Doe
+      Will
     </span>
     
     
       <br>
       <span>
-        Last Updated: May 30, 2019
+        最后更新于: 6月 01, 2019
       </span>
     
     
@@ -424,7 +464,7 @@
     <div class="theme-search__textfield">
       <div class="mdui-textfield mdui-textfield-floating-label">
         <i class="mdui-icon material-icons">&#xe8b6;</i>
-        <label class="mdui-textfield-label">Search</label>
+        <label class="mdui-textfield-label">搜索</label>
         <textarea class="mdui-textfield-input" id="search-field"></textarea>
       </div>
     </div>
@@ -618,9 +658,9 @@
   </main>
 
   <div id="outdated" style="z-index: 9999;">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+    <h6>你的浏览器已经过气辣！</h6>
+    <p>赶紧升级浏览器来访问本站吧！<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">现在就去</a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="关闭">&times;</a></p>
   </div>
   <!-- import js -->
 
