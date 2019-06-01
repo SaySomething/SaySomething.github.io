@@ -48,7 +48,9 @@
 
   <meta name="author" content="Will">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+      <meta name="description" content="世の中すべての不幸は、当事者の能力が不足した">
+  
+  <meta name="keywords" content="blog, developer">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="Will‘s Blog">
@@ -65,6 +67,8 @@
   <meta property="og:type" content="blog">
   <meta property="og:title" content="归档 - Will‘s Blog | Will‘s Blog">
   <meta property="og:image" content="/images/favicon.png">
+  
+    <meta property="og:description" content="世の中すべての不幸は、当事者の能力が不足した">
   
 
   
@@ -259,13 +263,13 @@
     </div>
   </div>
   <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
-    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png">
+    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.jpeg">
     <div class="theme-drawer__header__layer-2__user__info">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
         Will
       </div>
       <div class="theme-drawer__header__layer-2__user__info__slogan mdui-text-color-white-secondary">
-        I&#39;m your slogan!
+        天行健 君子以自强不息
       </div>
     </div>
   </div>
@@ -347,74 +351,6 @@
     <div class="mdui-divider"></div>
     <ul class="mdui-list" mdui-collapse="{accordion: true}">
       
-        
-          
-            <a href="/friends" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ba;</i>
-              
-              
-              <div class="mdui-list-item-content">Test1</div>
-            </a>
-        
-      
-        
-          
-            <a href="/apply-for-link" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-child mdui-text-center"></i>
-              
-              
-              
-              <div class="mdui-list-item-content">Test2</div>
-            </a>
-        
-      
-        
-          
-            <a href="/galleries" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-              
-              
-              <div class="mdui-list-item-content">Test3</div>
-            </a>
-        
-      
-        
-          <div class="mdui-collapse-item">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-              
-              
-              <div class="mdui-list-item-content">Test4</div>
-              <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-            </div>
-            <div class="mdui-collapse-item-body mdui-list">
-              
-                
-                  <a href="/myfriends" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
-                
-                    TEST1
-                  </a>
-              
-                
-                  <a href="/timeline" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
-                
-                    TEST2
-                  </a>
-              
-            </div>
-          </div>
-        
-      
     </ul>
   
 </div>
@@ -446,7 +382,12 @@
   var copyrightNow = new Date().getFullYear();
   var textContent = document.querySelector('span[year]')
   
-    textContent.textContent = copyrightNow
+    copyrightSince = 2019;
+    if (copyrightSince === copyrightNow) {
+      textContent.textContent = copyrightNow
+    } else {
+      textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
   
 </script>
 
@@ -468,13 +409,13 @@
         <img class="mdui-img-fluid mdui-img-rounded" src="/images/bg.png">
       </div>
       <div class="theme-archive__header__content" style="background-color:#eeeeee">
-        <img class="mdui-img-circle theme-archive__header__avatar" src="/images/avatar.png">
+        <img class="mdui-img-circle theme-archive__header__avatar" src="/images/avatar.jpeg">
         <div class="theme-archive__header__info">
           <div class="theme-archive__header__name">
             Will
           </div>
           <div class="theme-archive__header__slogan">
-            I&#39;m your slogan!
+            天行健 君子以自强不息
           </div>
         </div>
         <div class="theme-spacer mdui-hidden-sm-down"></div>
@@ -492,10 +433,10 @@
           
           <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
             <a href="/categories/工具类知识/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-brown">
-                <div class="mdui-card-media" style="background-image: url(/images/random/2.png)"></div>
+              <div class="mdui-card mdui-color-deep-orange">
+                <div class="mdui-card-media" style="background-image: url(/images/random/14.png)"></div>
                 <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.jpeg">
                   <div class="theme-archive__items__text-title">工具类知识</div>
                   <div class="theme-archive__items__length">
                     
@@ -518,10 +459,10 @@
           
           <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
             <a href="/tags/Markdown/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-light-green">
+              <div class="mdui-card mdui-color-purple">
                 <div class="mdui-card-media" style="background-image: url(/images/random/31.png)"></div>
                 <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.jpeg">
                   <div class="theme-archive__items__text-title">Markdown</div>
                   <div class="theme-archive__items__length">
                     
@@ -536,10 +477,10 @@
           
           <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
             <a href="/tags/Hexo/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-lime">
-                <div class="mdui-card-media" style="background-image: url(/images/random/2.png)"></div>
+              <div class="mdui-card mdui-color-light-green">
+                <div class="mdui-card-media" style="background-image: url(/images/random/35.png)"></div>
                 <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.jpeg">
                   <div class="theme-archive__items__text-title">Hexo</div>
                   <div class="theme-archive__items__length">
                     
@@ -562,10 +503,10 @@
           
           <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
             <a href="/archives/2019" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-green">
-                <div class="mdui-card-media" style="background-image: url(/images/random/41.png)"></div>
+              <div class="mdui-card mdui-color-red">
+                <div class="mdui-card-media" style="background-image: url(/images/random/18.png)"></div>
                 <div class="theme-archive__items__content theme-archive__items__content--no-length">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.jpeg">
                   <div class="theme-archive__items__text-title">2019</div>
                 </div>
               </div>
@@ -583,22 +524,22 @@
       <div class="mdui-dialog-content">
         <div class="mdui-list">
           
-            <a href="https://twitter.com" title="Twitter" class="mdui-list-item mdui-ripple" target="_blank">
+            <a href="https://www.zhihu.com/people/likead/activities" title="Zhihu" class="mdui-list-item mdui-ripple" target="_blank">
               
-                <i class="mdui-list-item-icon mdui-icon fa fa-twitter mdui-text-center"></i>&emsp;
+                <i class="mdui-list-item-icon mdui-icon fa fa-zhihu mdui-text-center"></i>&emsp;
               
               
               
-              Twitter
+              Zhihu
             </a>
           
-            <a href="https://facebook.com" title="Facebook" class="mdui-list-item mdui-ripple" target="_blank">
+            <a href="https://weibo.com/willbetterman?is_all=1" title="Weibo" class="mdui-list-item mdui-ripple" target="_blank">
+              
+                <i class="mdui-list-item-icon mdui-icon fa fa-weibo mdui-text-center"></i>&emsp;
               
               
               
-                <i class="mdui-list-item-icon"></i>&emsp;
-              
-              Facebook
+              Weibo
             </a>
           
         </div>

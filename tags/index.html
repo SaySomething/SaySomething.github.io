@@ -48,7 +48,9 @@
 
   <meta name="author" content="Will">
   
-  <meta name="keywords" content="blog, hexo, mdui">
+      <meta name="description" content="世の中すべての不幸は、当事者の能力が不足した">
+  
+  <meta name="keywords" content="blog, developer">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="Will‘s Blog">
@@ -65,6 +67,8 @@
   <meta property="og:type" content="blog">
   <meta property="og:title" content="tags - Will‘s Blog | Will‘s Blog">
   <meta property="og:image" content="/images/favicon.png">
+  
+    <meta property="og:description" content="世の中すべての不幸は、当事者の能力が不足した">
   
 
   
@@ -259,13 +263,13 @@
     </div>
   </div>
   <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
-    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png">
+    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.jpeg">
     <div class="theme-drawer__header__layer-2__user__info">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
         Will
       </div>
       <div class="theme-drawer__header__layer-2__user__info__slogan mdui-text-color-white-secondary">
-        I&#39;m your slogan!
+        天行健 君子以自强不息
       </div>
     </div>
   </div>
@@ -347,74 +351,6 @@
     <div class="mdui-divider"></div>
     <ul class="mdui-list" mdui-collapse="{accordion: true}">
       
-        
-          
-            <a href="/friends" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ba;</i>
-              
-              
-              <div class="mdui-list-item-content">Test1</div>
-            </a>
-        
-      
-        
-          
-            <a href="/apply-for-link" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-child mdui-text-center"></i>
-              
-              
-              
-              <div class="mdui-list-item-content">Test2</div>
-            </a>
-        
-      
-        
-          
-            <a href="/galleries" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-              
-              
-              <div class="mdui-list-item-content">Test3</div>
-            </a>
-        
-      
-        
-          <div class="mdui-collapse-item">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-              
-              
-              <div class="mdui-list-item-content">Test4</div>
-              <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-            </div>
-            <div class="mdui-collapse-item-body mdui-list">
-              
-                
-                  <a href="/myfriends" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
-                
-                    TEST1
-                  </a>
-              
-                
-                  <a href="/timeline" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
-                
-                    TEST2
-                  </a>
-              
-            </div>
-          </div>
-        
-      
     </ul>
   
 </div>
@@ -446,7 +382,12 @@
   var copyrightNow = new Date().getFullYear();
   var textContent = document.querySelector('span[year]')
   
-    textContent.textContent = copyrightNow
+    copyrightSince = 2019;
+    if (copyrightSince === copyrightNow) {
+      textContent.textContent = copyrightNow
+    } else {
+      textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
   
 </script>
 
@@ -484,18 +425,6 @@
         
       </div>
       
-  <div class="theme-post__qrcode">
-    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
-      <i class="mdui-icon material-icons">&#xe337;</i>
-    </button>
-    <ul class="mdui-menu" id="qrcode-menu">
-      <li class="mdui-list-item" style="cursor: auto">
-        文章二维码
-      </li>
-        <img class="mdui-img-fluid" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB3klEQVR42u3aS3KDMBAFQO5/6eQAKcgbjRQHqbWibHCpWYw1n+tri3VhYGBgYGBgYPwbxhWvu6eef+fu/gl7wMDAOIzxS2j7saHn6/63z3vAwMA4mfEcLp/vn7XFZA8YGBgYCSP/pErFwMDA6DOSUJunrBgYGBgrktg8yCbsj+XiGBgYL2TkRfl113/a38DAwHgVozzi0Ci9VYPswpkRDAyMVzE6hfskKe0fJW9fBAYGxjGMfqjNC2pjZTgMDAyMpBy/okmQpKnlEy4GBsYxjE6QTZ7KhzAwMDAwqilr9fO83DahhYmBgbE1Y2zMNA+mSUO0+rIwMDBOY+Sp7KzEtRNkMTAwzmTkpa6FhbPiGBkGBsZpjLFktZr6VtPawf8NDAyMTRmzRiKSV1NNZcu5OAYGxtaM/qhEfkwcS24xMDAwkgPZrMNf3v4sDFtgYGAcwxi7npXiTujEYmBgbMqors5AWDUoFwIuBgbG1ozBUlccQKsFu0IQx8DAOIyRD0OMJbr9xkO53IaBgbEpIy+fdQYmxoI7BgYGxhgjCZ3Vtmie9GJgYGCsYORNzagwh4GBcSSjmsR2NpE3R8sBFwMDY1PG2ABEFVxtAyzsb2BgYLyK8d6FgYGBgYGBgfHR9Q269jDdhaK/zgAAAABJRU5ErkJggg==" style="cursor: auto">
-    </ul>
-  </div>
-
 
       
   <div class="theme-post__share">
@@ -565,7 +494,7 @@
         
         
           <section class="mdui-card-media">
-            <img src="/images/random/23.png">
+            <img src="/images/random/33.png">
           </section>
         
         <section class="mdui-typo theme-post__card__content">
@@ -627,24 +556,6 @@
       <div class="mdui-dialog-title">打赏</div>
       <div class="mdui-dialog-content">
         <div class="mdui-list">
-          
-            <a href="/img/avatar.png" title="wechat" class="mdui-list-item mdui-ripple" target="_blank">
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-wechat mdui-text-center"></i>&emsp;
-              
-              
-              
-              wechat
-            </a>
-          
-            <a href="https://paypal.com" title="paypay" class="mdui-list-item mdui-ripple" target="_blank">
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-paypal mdui-text-center"></i>&emsp;
-              
-              
-              
-              paypay
-            </a>
           
         </div>
       </div>
